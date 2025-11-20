@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Input Barang - MariMart</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="input-page">
 
+  <!-- HEADER -->
   <div class="input-header">
     <button class="back-btn" onclick="history.back()">←</button>
     <h2>Input Barang</h2>
   </div>
 
+  <!-- FORM -->
   <div class="form-box">
 
+    <!-- BARCODE -->
     <label>Barcode</label>
-    <input type="text" id="barcode" placeholder="Scan atau ketik barcode">
+    <input type="text" id="barcode" oninput="autoFillMaster()" placeholder="Scan atau ketik barcode">
 
+    <!-- NAMA OTOMATIS -->
     <label>Nama Barang</label>
-    <input type="text" id="nama" placeholder="Nama barang">
+    <input type="text" id="nama" placeholder="Auto dari master" readonly>
 
+    <!-- RH OTOMATIS -->
+    <label>RH (Retur Hari)</label>
+    <input type="number" id="rh" placeholder="Auto dari master" readonly>
+
+    <!-- QTY -->
+    <label>Qty</label>
+    <input type="number" id="qty" value="1">
+
+    <!-- EXPIRED DATE -->
     <label>Tanggal Expired</label>
 
     <div class="mm-spinner">
@@ -41,6 +56,7 @@
       </div>
     </div>
 
+    <!-- BUTTON -->
     <button class="btn-blue" onclick="saveItem()">SIMPAN</button>
     <button class="btn-white-outline" onclick="history.back()">BATAL</button>
 
@@ -48,4 +64,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
