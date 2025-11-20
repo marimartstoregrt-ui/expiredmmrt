@@ -1,119 +1,124 @@
-/* ===== GLOBAL ===== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* ===== INPUT PAGE ===== */
-.input-page {
-  background: #FFF3E5;
-  padding: 20px;
-}
-
-.input-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.back-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.form-box {
-  background: white;
-  padding: 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* LABEL */
-label {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 10px 0 6px;
-  display: block;
-}
-
-/* INPUT */
-input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 15px;
-  margin-bottom: 14px;
+/* ================================
+   GLOBAL
+================================ */
+* {
   box-sizing: border-box;
 }
 
-input[readonly] {
-  background: #f4f4f4;
-  font-weight: bold;
-  color: #444;
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #FFF3E5;
 }
 
-/* ===== DATE PICKER SPINNER ===== */
-.mm-spinner {
+/* ================================
+   DASHBOARD (index.html)
+================================ */
+
+/* HEADER */
+.header {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 14px;
 }
 
-.mm-col {
-  flex: 1;
+.logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.header-title h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1B1B1B;
+  font-weight: 700;
+}
+
+.sub {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* SUMMARY CARDS */
+.cards {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 14px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   text-align: center;
 }
 
-.mm-label {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  color: #0033CC;
-  margin-bottom: 4px;
+.card-title {
+  opacity: 0.8;
+  font-size: 14px;
 }
 
-.mm-col select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 2px solid #0033CC;
-  font-size: 18px;
-  background: white;
-  appearance: auto;
-  text-align-last: center;
+.card-value {
+  font-size: 26px;
+  font-weight: 700;
 }
 
-/* ===== BUTTONS ===== */
+/* CARD COLORS */
+.red         { background: #D94848; }
+.orange-dark { background: #E65F00; }
+.yellow      { background: #FFCF48; color: #2E2E2E; }
+.green       { background: #4CAF50; }
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Dipakai di dashboard & input */
 .btn-blue {
-  width: 100%;
+  flex: 1;
   padding: 14px;
   background: #0033CC;
-  color: white;
-  font-size: 17px;
   border: none;
   border-radius: 12px;
-  margin-top: 10px;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.btn-white-outline {
-  width: 100%;
+.btn-blue:hover {
+  opacity: .95;
+}
+
+.btn-white {
+  flex: 1;
   padding: 14px;
   background: white;
   border: 2px solid #0033CC;
-  color: #0033CC;
-  font-size: 17px;
   border-radius: 12px;
-  margin-top: 10px;
+  color: #0033CC;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* ===== LIST ITEMS (Dashboard) ===== */
+/* SECTION & LIST */
+.section-title {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.list {
+  margin-top: 12px;
+}
+
+/* ITEM LIST */
 .item {
   background: white;
   padding: 12px;
@@ -133,6 +138,7 @@ input[readonly] {
   color: #555;
 }
 
+/* BADGE */
 .badge {
   position: absolute;
   right: 12px;
@@ -144,8 +150,116 @@ input[readonly] {
   color: white;
 }
 
-/* BADGE COLORS */
 .b-expired { background: #D94848; }
-.b-today { background: #FF8800; }
-.b-h1 { background: #FFD93D; color: black; }
-.b-ok { background: #4CAF50; }
+.b-today   { background: #FF8800; }
+.b-h1      { background: #FFD93D; color: black; }
+.b-ok      { background: #4CAF50; }
+
+/* ================================
+   INPUT PAGE (input.html)
+================================ */
+
+.input-page {
+  padding: 20px;
+}
+
+/* HEADER INPUT */
+.input-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.input-header h2 {
+  margin: 0;
+}
+
+/* FORM CONTAINER */
+.form-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* LABEL & INPUT */
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+/* field auto-fill dari master */
+input[readonly] {
+  background: #f2f2f2;
+  font-weight: bold;
+  color: #555;
+}
+
+/* DATE SPINNER */
+.mm-spinner {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.mm-col {
+  flex: 1;
+  text-align: center;
+}
+
+.mm-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0033CC;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.mm-col select {
+  width: 100%;
+  padding: 10px;
+  height: 55px;
+  border: 2px solid #0033CC;
+  border-radius: 10px;
+  font-size: 18px;
+  background: white;
+  text-align-last: center;
+  appearance: auto;
+}
+
+/* BUTTONS KHUSUS INPUT (pakai ulang warna) */
+.btn-white-outline {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border: 2px solid #0033CC;
+  color: #0033CC;
+  font-size: 17px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-white-outline:hover {
+  background: #eef2ff;
+}
