@@ -251,8 +251,29 @@ input {
   text-align-last: center;
   overflow-y: scroll;
 }
+.b-expired {
+  background: #D94848;
+  color: white;
+}
+
+.b-today {
+  background: #FF8800;
+  color: white;
+}
+
+.b-h1 {
+  background: #FFD93D;
+  color: black;
+}
+
+.b-ok {
+  background: #4CAF50;
+  color: white;
+}
+
 
 .mm-col select:focus {
   border-color: #FF6A00;
 }
+
 
