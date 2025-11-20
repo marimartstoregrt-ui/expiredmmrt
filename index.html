@@ -9,16 +9,14 @@
 
 <body>
 
-  <!-- HEADER -->
   <div class="header">
-    <img src="mm-logo.png" class="logo">
+    <img src="assets/mm-logo.png" class="logo">
     <div class="header-title">
       <h2>MariMart Store App</h2>
       <span class="sub">Expired Monitoring Dashboard</span>
     </div>
   </div>
 
-  <!-- SUMMARY CARDS -->
   <div class="cards">
     <div class="card red">
       <div class="card-title">Expired</div>
@@ -41,16 +39,15 @@
     </div>
   </div>
 
-  <!-- ACTION BUTTONS -->
   <div class="actions">
-    <button class="btn-blue">Scan Barcode</button>
-    <button class="btn-white">Input Manual</button>
+    <button class="btn-blue" onclick="window.location.href='input.html'">Scan Barcode</button>
+    <button class="btn-white" onclick="window.location.href='input.html'">Input Manual</button>
   </div>
 
-  <!-- PRIORITY LIST -->
   <div class="section-title">Prioritas Expired</div>
   <div id="priorityList" class="list"></div>
 
   <script src="app.js"></script>
+
 </body>
 </html>
