@@ -1,143 +1,11 @@
+/* ===== GLOBAL ===== */
 body {
   margin: 0;
-  padding: 20px;
-  background: #FFF3E5;
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* HEADER */
-.header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.logo {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-}
-
-.header-title h2 {
-  margin: 0;
-  font-size: 22px;
-  color: #1B1B1B;
-  font-weight: 700;
-}
-
-.sub {
-  font-size: 13px;
-  opacity: 0.6;
-}
-
-/* CARDS */
-.cards {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.card {
-  padding: 16px;
-  border-radius: 14px;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  text-align: center;
-}
-
-.card-title {
-  opacity: 0.8;
-  font-size: 14px;
-}
-
-.card-value {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-/* CARD COLORS */
-.red { background: #D94848; }
-.orange-dark { background: #E65F00; }
-.yellow { background: #FFCF48; color: #2E2E2E; }
-.green { background: #4CAF50; }
-
-/* ACTION BUTTONS */
-.actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 25px;
-}
-
-.btn-blue {
-  flex: 1;
-  padding: 14px;
-  background: #0033CC;
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-size: 16px;
-}
-
-.btn-white {
-  flex: 1;
-  padding: 14px;
-  background: white;
-  border: 2px solid #0033CC;
-  border-radius: 12px;
-  color: #0033CC;
-  font-size: 16px;
-}
-
-/* LIST */
-.section-title {
-  margin-top: 30px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.list {
-  margin-top: 12px;
-  background: white;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* ITEM */
-.item {
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.item:last-child { border-bottom: none; }
-
-.item-name {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.item-info {
-  font-size: 13px;
-  opacity: 0.6;
-  margin-top: 2px;
-}
-
-/* BADGES */
-.badge {
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  display: inline-block;
-  margin-top: 6px;
-}
-
-.b-expired { background: #D94848; color: white; }
-.b-today { background: #E65F00; color: white; }
-.b-h1 { background: #FFCF48; color: #333; }
-.b-ok { background: #4CAF50; color: white; }
-
-/* INPUT PAGE */
+/* ===== INPUT PAGE ===== */
 .input-page {
   background: #FFF3E5;
   padding: 20px;
@@ -153,8 +21,7 @@ body {
 .back-btn {
   background: none;
   border: none;
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 24px;
   cursor: pointer;
 }
 
@@ -165,43 +32,73 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* LABEL */
 label {
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin: 10px 0 6px;
   display: block;
 }
 
+/* INPUT */
 input {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  margin-bottom: 14px;
   font-size: 15px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
 }
 
-.datepicker-box {
+input[readonly] {
+  background: #f4f4f4;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ===== DATE PICKER SPINNER ===== */
+.mm-spinner {
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-.datepicker-box input {
+.mm-col {
   flex: 1;
   text-align: center;
-  font-size: 16px;
 }
 
-/* BUTTON STYLES */
+.mm-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0033CC;
+  margin-bottom: 4px;
+}
+
+.mm-col select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #0033CC;
+  font-size: 18px;
+  background: white;
+  appearance: auto;
+  text-align-last: center;
+}
+
+/* ===== BUTTONS ===== */
 .btn-blue {
   width: 100%;
   padding: 14px;
   background: #0033CC;
+  color: white;
+  font-size: 17px;
   border: none;
   border-radius: 12px;
-  font-size: 17px;
-  color: white;
-  margin-top: 12px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .btn-white-outline {
@@ -209,71 +106,46 @@ input {
   padding: 14px;
   background: white;
   border: 2px solid #0033CC;
-  border-radius: 12px;
+  color: #0033CC;
   font-size: 17px;
-  color: #0033CC;
-  margin-top: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-/* HYBRID DATE PICKER MARI MART */
-.mm-spinner {
-  display: flex;
-  gap: 12px;
-  margin: 10px 0 20px;
-  justify-content: space-between;
-}
-
-.mm-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mm-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #0033CC;
-  margin-bottom: 6px;
-}
-
-.mm-col select {
-  width: 100%;
-  padding: 12px;
-  height: 55px;
-  border-radius: 10px;
-  border: 2px solid #0033CC;
+/* ===== LIST ITEMS (Dashboard) ===== */
+.item {
   background: white;
-  color: #333;
-  font-size: 18px;
-  text-align: center;
-  appearance: none;
-  text-align-last: center;
-  overflow-y: scroll;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  position: relative;
 }
-.b-expired {
-  background: #D94848;
+
+.item-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.item-info {
+  font-size: 13px;
+  color: #555;
+}
+
+.badge {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
   color: white;
 }
 
-.b-today {
-  background: #FF8800;
-  color: white;
-}
-
-.b-h1 {
-  background: #FFD93D;
-  color: black;
-}
-
-.b-ok {
-  background: #4CAF50;
-  color: white;
-}
-
-
-.mm-col select:focus {
-  border-color: #FF6A00;
-}
-
-
+/* BADGE COLORS */
+.b-expired { background: #D94848; }
+.b-today { background: #FF8800; }
+.b-h1 { background: #FFD93D; color: black; }
+.b-ok { background: #4CAF50; }
