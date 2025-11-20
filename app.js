@@ -1,41 +1,51 @@
-// SAMPLE DATA SEMENTARA
-const sample = [
-  { nama: "Susu UHT", barcode: "89912345", expired: "2024-04-27", status: "Expired" },
-  { nama: "Roti Tawar", barcode: "12345", expired: "2024-04-29", status: "H+1" },
-  { nama: "Mi Instan", barcode: "998877", expired: "2024-05-02", status: "Aman" }
-];
+async function loadDashboard() {
 
-// DASHBOARD
-function loadDashboard() {
-  document.getElementById("expiredCount").innerText = sample.filter(x => x.status === "Expired").length;
-  document.getElementById("todayCount").innerText   = sample.filter(x => x.status === "Hari Ini").length;
-  document.getElementById("h1Count").innerText      = sample.filter(x => x.status === "H+1").length;
-  document.getElementById("okCount").innerText      = sample.filter(x => x.status === "Aman").length;
+  const res = await fetch(`${API_URL}?mode=list`);
+  const data = await res.json();
 
+  // ---- SUMMARY ANGKA ----
+  const now = new Date();
+  const todayStr = now.toISOString().split("T")[0];
+
+  const expired = data.filter(x => x.status === "Expired").length;
+  const lewatRH = data.filter(x => x.status === "Lewat RH").length;
+  const bisaRetur = data.filter(x => x.status === "Bisa Retur").length;
+
+  // Assign ke kartu dashboard
+  document.getElementById("expiredCount").innerText = expired;
+  document.getElementById("todayCount").innerText   = lewatRH;     // RH alert
+  document.getElementById("h1Count").innerText      = bisaRetur;
+  document.getElementById("okCount").innerText      = data.length;
+
+  // ---- PRIORITAS LIST ----
   const list = document.getElementById("priorityList");
-  if (!list) return;
-
   list.innerHTML = "";
 
-  sample.forEach(item => {
+  // sort by expired ascending
+  data.sort((a, b) => new Date(a.expired) - new Date(b.expired));
+
+  data.forEach(item => {
     list.innerHTML += `
       <div class="item">
-        <div class="item-name">${item.nama}</div>
-        <div class="item-info">${item.barcode} • ${item.expired}</div>
+        <div class="item-name">${item.deskripsi}</div>
+        <div class="item-info">${item.barcode} • Qty: ${item.qty}</div>
+        <div class="item-info">Exp: ${item.expired} • RH: ${item.rh} • Batas Retur: ${item.batas_retur}</div>
         <span class="badge ${getBadge(item.status)}">${item.status}</span>
       </div>
     `;
   });
 }
 
+
 function getBadge(status) {
   switch(status) {
-    case "Expired": return "b-expired";
-    case "Hari Ini": return "b-today";
-    case "H+1": return "b-h1";
-    default: return "b-ok";
+    case "Expired": return "b-expired";     // merah
+    case "Lewat RH": return "b-today";      // orange
+    case "Bisa Retur": return "b-h1";       // kuning
+    default: return "b-ok";                 // hijau
   }
 }
+
 
 // INPUT PAGE — HYBRID DATE PICKER
 function setupMariMartDatePicker() {
@@ -91,4 +101,10 @@ if (document.getElementById("priorityList")) {
 if (document.getElementById("year")) {
     setupMariMartDatePicker();
 }
+
+if (document.getElementById("priorityList")) {
+  loadDashboard();
+}
+
+
 
