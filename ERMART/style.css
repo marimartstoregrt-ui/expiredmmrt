@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  padding: 20px;
+  background: #FFF3E5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.header-title h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1B1B1B;
+  font-weight: 700;
+}
+
+.sub {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* CARDS */
+.cards {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 14px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.card-title {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.card-value {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* CARD COLORS */
+.red { background: #D94848; }
+.orange-dark { background: #E65F00; }
+.yellow { background: #FFCF48; color: #2E2E2E; }
+.green { background: #4CAF50; }
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-blue {
+  flex: 1;
+  padding: 14px;
+  background: #0033CC;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+}
+
+.btn-white {
+  flex: 1;
+  padding: 14px;
+  background: white;
+  border: 2px solid #0033CC;
+  border-radius: 12px;
+  color: #0033CC;
+  font-size: 16px;
+}
+
+/* LIST */
+.section-title {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.list {
+  margin-top: 12px;
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ITEM */
+.item {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item:last-child { border-bottom: none; }
+
+.item-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.item-info {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+
+/* BADGES */
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.b-expired { background: #D94848; color: white; }
+.b-today { background: #E65F00; color: white; }
+.b-h1 { background: #FFCF48; color: #333; }
+.b-ok { background: #4CAF50; color: white; }
+
+/* INPUT PAGE */
+.input-page {
+  background: #FFF3E5;
+  padding: 20px;
+}
+
+.input-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-box {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.datepicker-box {
+  display: flex;
+  gap: 10px;
+}
+
+.datepicker-box input {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* BUTTON STYLES */
+.btn-blue {
+  width: 100%;
+  padding: 14px;
+  background: #0033CC;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  color: white;
+  margin-top: 12px;
+}
+
+.btn-white-outline {
+  width: 100%;
+  padding: 14px;
+  background: white;
+  border: 2px solid #0033CC;
+  border-radius: 12px;
+  font-size: 17px;
+  color: #0033CC;
+  margin-top: 12px;
+}
+
+/* HYBRID DATE PICKER MARI MART */
+.mm-spinner {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0 20px;
+  justify-content: space-between;
+}
+
+.mm-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mm-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0033CC;
+  margin-bottom: 6px;
+}
+
+.mm-col select {
+  width: 100%;
+  padding: 12px;
+  height: 55px;
+  border-radius: 10px;
+  border: 2px solid #0033CC;
+  background: white;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  appearance: none;
+  text-align-last: center;
+  overflow-y: scroll;
+}
+
+.mm-col select:focus {
+  border-color: #FF6A00;
+}
+

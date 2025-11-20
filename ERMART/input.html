@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Barang - MariMart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="input-page">
+
+  <!-- HEADER -->
+  <div class="input-header">
+    <button class="back-btn" onclick="history.back()">←</button>
+    <h2>Input Barang</h2>
+  </div>
+
+  <!-- FORM INPUT -->
+  <div class="form-box">
+
+    <label>Barcode</label>
+    <input type="text" id="barcode" placeholder="Scan atau ketik barcode">
+
+    <label>Nama Barang</label>
+    <input type="text" id="nama" placeholder="Nama barang">
+
+    <label>Tanggal Expired</label>
+
+<div class="mm-spinner">
+  <div class="mm-col">
+    <span class="mm-label">YEAR</span>
+    <select id="year"></select>
+  </div>
+
+  <div class="mm-col">
+    <span class="mm-label">MONTH</span>
+    <select id="month"></select>
+  </div>
+
+  <div class="mm-col">
+    <span class="mm-label">DAY</span>
+    <select id="day"></select>
+  </div>
+</div>
+
+
+    <button class="btn-blue" onclick="saveItem()">SIMPAN</button>
+    <button class="btn-white-outline" onclick="history.back()">BATAL</button>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MariMart Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <img src="mm-logo.png" class="logo">
+    <div class="header-title">
+      <h2>MariMart Store App</h2>
+      <span class="sub">Expired Monitoring Dashboard</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="cards">
+    <div class="card red">
+      <div class="card-title">Expired</div>
+      <div class="card-value" id="expiredCount">0</div>
+    </div>
+
+    <div class="card orange-dark">
+      <div class="card-title">Hari Ini</div>
+      <div class="card-value" id="todayCount">0</div>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-title">H+1</div>
+      <div class="card-value" id="h1Count">0</div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">Aman</div>
+      <div class="card-value" id="okCount">0</div>
+    </div>
+  </div>
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+    <button class="btn-blue">Scan Barcode</button>
+    <button class="btn-white">Input Manual</button>
+  </div>
+
+  <!-- PRIORITY LIST -->
+  <div class="section-title">Prioritas Expired</div>
+  <div id="priorityList" class="list"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
