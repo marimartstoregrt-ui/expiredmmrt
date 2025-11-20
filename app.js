@@ -81,3 +81,14 @@ function saveItem() {
 
 if (window.location.href.includes("index")) loadDashboard();
 if (window.location.href.includes("input")) setupMariMartDatePicker();
+
+// Selalu load dashboard jika elemen tersedia
+if (document.getElementById("priorityList")) {
+    loadDashboard();
+}
+
+// Selalu load date picker jika elemen tersedia
+if (document.getElementById("year")) {
+    setupMariMartDatePicker();
+}
+
